@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modal Box UI Test</title>
+    <link rel="stylesheet" href="../static/modal.css">
+</head>
+<body>
+
+    <button id="modal-btn">
+        THIS IS A PRODUCT
+    </button>
+
+    <div class="support-case-window">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <p style="text-align: center">Støttesager for: INSERT PRODUCT</p>
+            <table class="list" style="width: 100%">
+                <tr>
+                    <td>INSERT SUPPORT CASE NAME</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="support-case-checkbox" type="checkbox"/>
+                        <img src="../static/user_unavailable.png" width="25" height="18"/>
+                        <input id="support-case-chat"
+                               type="image"
+                               src="../static/chat.png"
+                               onclick="alert('To the Chatroom')"
+                               width="17"
+                               height="15"/>
+                    </td>
+                </tr>
+            </table>
+            <p align="right">
+                <button>
+                        Opret Ny Støttesag
+                </button>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        let modalBtn = document.getElementById("modal-btn")
+        let modal = document.querySelector(".support-case-window")
+        let closeBtn = document.querySelector(".close-btn")
+        modalBtn.onclick = function(){
+            modal.style.display = "block"
+        }
+        closeBtn.onclick = function(){
+            modal.style.display = "none"
+        }
+        window.onclick = function(e){
+            if(e.target == modal){
+                modal.style.display = "none"
+            }
+        }
+    </script>
+
+</body>
+</html>
