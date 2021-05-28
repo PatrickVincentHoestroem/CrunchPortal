@@ -1,7 +1,14 @@
 package crunch.demo.model;
 
-public class Chat {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
+public class Chat {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long ID;
     private long supportnameID;
     private String costumer;
@@ -12,6 +19,10 @@ public class Chat {
         this.supportnameID = supportnameID;
         this.costumer = costumer;
         this.supportCaseID = supportCaseID;
+    }
+
+    public Chat() {
+
     }
 
     public long getID() {

@@ -1,7 +1,13 @@
 package crunch.demo.model;
 
+import javax.persistence.*;
+
+
+@Entity
 public class Supportercase {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private long supportNameID;
     private String name;
@@ -15,6 +21,10 @@ public class Supportercase {
         this.name = name;
         this.description = description;
         this.chatID = chatID;
+    }
+
+    public Supportercase() {
+
     }
 
     public long getId() {

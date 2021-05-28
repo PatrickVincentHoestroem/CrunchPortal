@@ -1,6 +1,14 @@
 package crunch.demo.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Brand {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private long id;
     private String name;
@@ -12,9 +20,14 @@ public class Brand {
         this.logo = logo;
     }
 
-    public long getId() {
+    public Brand(){
+
+    }
+
+    public long getId(){
         return id;
     }
+
 
     public void setId(long id) {
         this.id = id;
@@ -35,4 +48,5 @@ public class Brand {
     public void setLogo(String logo) {
         this.logo = logo;
     }
+
 }
