@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <title>Modal Box UI Test</title>
     <link rel="stylesheet" href="../static/modal.css">
+    <link rel="stylesheet" href="../static/chat.css">
 </head>
 <body>
 
-    <button id="modal-btn">
+    <button id="support-case-open">
         THIS IS A PRODUCT
     </button>
 
-    <div class="support-case-window">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
+    <div class="support-case-modal">
+        <div class="support-case-modal-content">
+            <span class="support-case-close">&times;</span>
             <p style="text-align: center">Støttesager for: INSERT PRODUCT</p>
             <table class="list" style="width: 100%">
                 <tr>
@@ -23,10 +24,9 @@
                     <td>
                         <input class="support-case-checkbox" type="checkbox"/>
                         <img src="../static/user_unavailable.png" width="25" height="18"/>
-                        <input id="support-case-chat"
+                        <input id="support-case-chat-open"
                                type="image"
                                src="../static/chat.png"
-                               onclick="alert('To the Chatroom')"
                                width="17"
                                height="15"/>
                     </td>
@@ -40,22 +40,61 @@
         </div>
     </div>
 
-    <script>
-        let modalBtn = document.getElementById("modal-btn")
-        let modal = document.querySelector(".support-case-window")
-        let closeBtn = document.querySelector(".close-btn")
-        modalBtn.onclick = function(){
-            modal.style.display = "block"
-        }
-        closeBtn.onclick = function(){
-            modal.style.display = "none"
-        }
-        window.onclick = function(e){
-            if(e.target == modal){
-                modal.style.display = "none"
-            }
-        }
-    </script>
+    <div class="support-case-chat-modal">
+        <div class="support-case-chat-modal-content">
+            <span class="support-case-chat-close">&times;</span>
+            <p>INSERT SUPPORT CASE NAME</p>
+            <hr>
+            <p><td>INSERT SUPPORT CASE DESCRIPTION</p>
+            <hr>
+            <table>
+                <div class="chat-container">
+                    <img src="../static/user_available.png" class="left">
+                    <p>Hello. How are you today?</p>
+                    <span class="time-right">11:00</span>
+                </div>
+                <div class="chat-container">
+                    <img src="../static/user_available.png" class="right">
+                    <p>Hey! I'm fine. Thanks for asking!</p>
+                    <span class="time-left">11:01</span>
+                </div>
+            </table>
+            <hr>
+            <input type="text" id="support-case-chat-input" style="width: 92%">
+            <button>Send</button>
+        </div>
+    </div>
 
+    <script>
+        let supportCaseOpen = document.getElementById("support-case-open")
+        let supportCaseModal = document.querySelector(".support-case-modal")
+        let supportCaseClose = document.querySelector(".support-case-close")
+        supportCaseOpen.onclick = function(){
+            supportCaseModal.style.display = "block"
+        }
+        supportCaseClose.onclick = function(){
+            supportCaseModal.style.display = "none"
+        }
+        /*window.onclick = function(e){
+            if(e.target == supportCaseModal) {
+                supportCaseModal.style.display = "none"
+            }
+        }*/
+
+        let supportCaseChatOpen = document.getElementById("support-case-chat-open")
+        let supportCaseChatModal = document.querySelector(".support-case-chat-modal")
+        let supportCaseChatClose = document.querySelector(".support-case-chat-close")
+        supportCaseChatOpen.onclick = function(){
+            supportCaseChatModal.style.display = "block"
+        }
+        supportCaseChatClose.onclick = function(){
+            supportCaseChatModal.style.display = "none"
+        }
+        /*window.onclick = function(e) {
+            if(e.target == supportCaseChatModal){
+                supportCaseChatModal.style.display = "none"
+            }
+        }*/
+    </script>
 </body>
 </html>
