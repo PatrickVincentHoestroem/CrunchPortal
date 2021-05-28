@@ -2,9 +2,47 @@ package crunch.demo.model;
 
 public class Product {
     private long id;
-    private String type;
+    private long supportName;
+    private String notification;
     private String name;
-    private String specification;
-    private double IP;
 
+
+    public Product(long id, long supportName, String notification, String name) {
+        this.id = id;
+        this.supportName = supportName;
+        this.notification = notification;
+        this.name = name;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getSupportName() {
+        return supportName;
+    }
+
+    public void setSupportName(long supportName) {
+        this.supportName = supportName;
+    }
+
+    public String getNotification() {
+        return notification;
+    }
+
+    public void setNotification(String notification) {
+        this.notification = notification;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
