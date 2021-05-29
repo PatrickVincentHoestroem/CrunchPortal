@@ -2,6 +2,7 @@ package crunch.demo.entity;
 
 import javax.persistence.*;
 
+
 @Entity
 @Table(name = "projects")
 @SecondaryTable(name = "users")

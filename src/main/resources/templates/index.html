@@ -5,6 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="../static/modal.css">
+    <link rel="stylesheet" href="../static/chat.css">
 </head>
 <body>
 <div class="w3-container w3-gray" style="height:60px;">
@@ -16,15 +18,17 @@
 <!-- Dette er indholdet til selve oversigten på frontpage -->
 <div class="w3-container" style="margin-top: 30px">
     <div class="w3-bar w3-border w3-light-grey">
-    <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-gray">Hjem</a>
-    <a href="butik.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large">Butik</a>
+        <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-gray">Hjem</a>
+        <a href="butik.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large">Butik</a>
     </div>
-    <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable">
+    <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable" id="support-case-open">
+
         <tr>
             <td><b>Server</b> <br>
                 Navn: Hovedmaskinen
             </td>
         </tr>
+
         <tr>
             <td><b>Server</b> <br>
                 Navn: Backup
@@ -46,6 +50,93 @@
             </td>
         </tr>
     </table>
+
+    <div class="support-case-modal">
+        <div class="support-case-modal-content">
+            <span class="support-case-close">&times;</span>
+            <p style="text-align: center">Støttesager for: INSERT PRODUCT</p>
+            <table class="list" style="width: 100%">
+                <tr>
+                    <td>INSERT SUPPORT CASE NAME</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="support-case-checkbox" type="checkbox"/>
+                        <img src="../static/user_unavailable.png" width="25" height="18"/>
+                        <input id="support-case-chat-open"
+                               type="image"
+                               src="../static/chat.png"
+                               width="17"
+                               height="15"/>
+                    </td>
+                </tr>
+            </table>
+            <p align="right">
+                <button>
+                    Opret Ny Støttesag
+                </button>
+            </p>
+        </div>
+    </div>
+
+    <div class="support-case-chat-modal">
+        <div class="support-case-chat-modal-content">
+            <span class="support-case-chat-close">&times;</span>
+            <p>INSERT SUPPORT CASE NAME</p>
+            <hr>
+            <p>
+            <td>INSERT SUPPORT CASE DESCRIPTION
+            </p>
+            <hr>
+            <table>
+                <div class="chat-container">
+                    <img src="../static/user_available.png" class="left">
+                    <p>Hello. How are you today?</p>
+                    <span class="time-right">11:00</span>
+                </div>
+                <div class="chat-container">
+                    <img src="../static/user_available.png" class="right">
+                    <p>Hey! I'm fine. Thanks for asking!</p>
+                    <span class="time-left">11:01</span>
+                </div>
+            </table>
+            <hr>
+            <input type="text" id="support-case-chat-input" style="width: 92%">
+            <button>Send</button>
+        </div>
+    </div>
 </div>
+
+<script>
+    let supportCaseOpen = document.getElementById("support-case-open")
+    let supportCaseModal = document.querySelector(".support-case-modal")
+    let supportCaseClose = document.querySelector(".support-case-close")
+    supportCaseOpen.onclick = function () {
+        supportCaseModal.style.display = "block"
+    }
+    supportCaseClose.onclick = function () {
+        supportCaseModal.style.display = "none"
+    }
+    /*window.onclick = function(e){
+        if(e.target == supportCaseModal) {
+            supportCaseModal.style.display = "none"
+        }
+    }*/
+
+    let supportCaseChatOpen = document.getElementById("support-case-chat-open")
+    let supportCaseChatModal = document.querySelector(".support-case-chat-modal")
+    let supportCaseChatClose = document.querySelector(".support-case-chat-close")
+    supportCaseChatOpen.onclick = function () {
+        supportCaseChatModal.style.display = "block"
+    }
+    supportCaseChatClose.onclick = function () {
+        supportCaseChatModal.style.display = "none"
+    }
+    /*window.onclick = function(e) {
+        if(e.target == supportCaseChatModal){
+            supportCaseChatModal.style.display = "none"
+        }
+    }*/
+</script>
 </body>
 </html>
