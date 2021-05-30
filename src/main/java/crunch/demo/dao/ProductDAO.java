@@ -3,10 +3,10 @@ package crunch.demo.dao;
 
 import crunch.demo.entity.ProductEntity;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.transaction.Transactional;
 
 @Transactional
 @Repository
