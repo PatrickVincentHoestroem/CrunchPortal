@@ -7,6 +7,11 @@ import javax.persistence.Id;
 
 @Entity
 public class Brand {
+    /*
+    Entity anotation means that its a entity class, wich means that that this class can counicate with the databse.
+    Id anotation means that the colum ID chosen.
+    @GeneratedValue anotation means that the Id colum is the primary key.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
