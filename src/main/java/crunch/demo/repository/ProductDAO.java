@@ -1,4 +1,4 @@
-package crunch.demo.dao;
+package crunch.demo.repository;
 
 
 import crunch.demo.entity.ProductEntity;
