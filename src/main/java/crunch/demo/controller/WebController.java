@@ -15,9 +15,4 @@ public class WebController {
     public String butik() {
         return "butik";
     }
-
-    @GetMapping("/supportcase")
-    public String supportcase() {
-        return "support_cases_modal";
-    }
 }

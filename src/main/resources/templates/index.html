@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="../static/modal.css">
-<link rel="stylesheet" href="../static/chat.css">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../static/css/modal.css">
+    <link rel="stylesheet" href="../static/css/chat.css">
     <title>Title</title>
 </head>
 <body>
@@ -51,11 +51,11 @@
         </tr>
     </table>
 
-    <div class="support-case-modal">
-        <div class="support-case-modal-content">
-            <span class="support-case-close">&times;</span>
+    <div id="support-case-modal">
+        <div id="support-case-modal-content">
+            <span id="support-case-close">&times;</span>
             <p style="text-align: center">Støttesager for: INSERT PRODUCT</p>
-            <table class="list" style="width: 100%">
+            <table id="list" style="width: 100%">
                 <tr>
                     <td>INSERT SUPPORT CASE NAME</td>
                 </tr>
@@ -79,9 +79,9 @@
         </div>
     </div>
 
-    <div class="support-case-chat-modal">
-        <div class="support-case-chat-modal-content">
-            <span class="support-case-chat-close">&times;</span>
+    <div id="support-case-chat-modal">
+        <div id="support-case-chat-modal-content">
+            <span id="support-case-chat-close">&times;</span>
             <p>INSERT SUPPORT CASE NAME</p>
             <hr>
             <p>
@@ -109,8 +109,8 @@
 
 <script>
     let supportCaseOpen = document.getElementById("support-case-open")
-    let supportCaseModal = document.querySelector(".support-case-modal")
-    let supportCaseClose = document.querySelector(".support-case-close")
+    let supportCaseModal = document.getElementById("support-case-modal")
+    let supportCaseClose = document.getElementById("support-case-close")
     supportCaseOpen.onclick = function () {
         supportCaseModal.style.display = "block"
     }
@@ -124,19 +124,14 @@
     }*/
 
     let supportCaseChatOpen = document.getElementById("support-case-chat-open")
-    let supportCaseChatModal = document.querySelector(".support-case-chat-modal")
-    let supportCaseChatClose = document.querySelector(".support-case-chat-close")
+    let supportCaseChatModal = document.getElementById("support-case-chat-modal")
+    let supportCaseChatClose = document.getElementById("support-case-chat-close")
     supportCaseChatOpen.onclick = function () {
         supportCaseChatModal.style.display = "block"
     }
     supportCaseChatClose.onclick = function () {
         supportCaseChatModal.style.display = "none"
     }
-    /*window.onclick = function(e) {
-        if(e.target == supportCaseChatModal){
-            supportCaseChatModal.style.display = "none"
-        }
-    }*/
 </script>
 </body>
 </html>
