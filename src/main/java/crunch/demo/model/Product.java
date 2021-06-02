@@ -12,14 +12,14 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private long supportName;
+    private long supportnameID;
     private String notification;
     private String name;
 
 
-    public Product(long id, long supportName, String notification, String name) {
+    public Product(long id, long supportnameID, String notification, String name) {
         this.id = id;
-        this.supportName = supportName;
+        this.supportnameID = supportnameID;
         this.notification = notification;
         this.name = name;
     }
@@ -36,12 +36,12 @@ public class Product {
         this.id = id;
     }
 
-    public long getSupportName() {
-        return supportName;
+    public long getSupportnameID() {
+        return supportnameID;
     }
 
-    public void setSupportName(long supportName) {
-        this.supportName = supportName;
+    public void setSupportnameID(long supportName) {
+        this.supportnameID = supportName;
     }
 
     public String getNotification() {
