@@ -1,4 +1,4 @@
-package crunch.demo.entity;
+package crunch.demo.model;
 
 import javax.persistence.*;
 

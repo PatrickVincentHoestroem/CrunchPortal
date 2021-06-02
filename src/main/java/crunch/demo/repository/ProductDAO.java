@@ -1,7 +1,7 @@
-package crunch.demo.dao;
+package crunch.demo.repository;
 
 
-import crunch.demo.entity.ProductEntity;
+import crunch.demo.model.ProductEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
